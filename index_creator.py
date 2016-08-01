@@ -13,12 +13,12 @@ def do_work(argv):
         words = line.split()
 
         indexes['i7'].append('array("index_set_id"=>"' + argv[2] + '", "index"=>"' + words[0] +
-                             'A01", "sequence"=>"' + words[1] +\
+                             '"sequence"=>"' + words[1] +
                              '", "created_at"=>Carbon::now(), "updated_at"=>Carbon::now()),')
 
         if len(words) == 4:
-            indexes['i5'].append('array("index_set_id"=>"' + argv[3] + '", "index"=>"' + words[2] +
-                                 'A01", "sequence"=>"' + words[3] +
+            indexes['i5'].append('array("index_set_id"=>"' + argv[2] + '", "index"=>"' + words[2] +
+                                 '"sequence"=>"' + words[3] +
                                  '", "created_at"=>Carbon::now(), "updated_at"=>Carbon::now()),')
 
     print('i7 indexes\n')
