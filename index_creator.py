@@ -6,22 +6,18 @@ def usage():
     sys.exit(1)
 
 
-def do_work(file, i7_set_id, i5_set_id):
+def do_work(argv):
     indexes = {'i7': [], 'i5': []}
 
-    for line in open(file):
+    for line in open(argv[1]):
         words = line.split()
-        if len(words) == 2:
-            indexes['i7'].append('array("index_set_id"=>"' + i7_set_id + '", "index"=>"' + words[0] +\
-                                 'A01", "sequence"=>"' + words[1] +\
-                                 '", "created_at"=>Carbon::now(), "updated_at"=>Carbon::now()),')
 
-        elif len(words) == 4:
-            indexes['i7'].append('array("index_set_id"=>"' + i7_set_id + '", "index"=>"' + words[0] +
-                                 'A01", "sequence"=>"' + words[1] +
-                                 '", "created_at"=>Carbon::now(), "updated_at"=>Carbon::now()),')
+        indexes['i7'].append('array("index_set_id"=>"' + argv[2] + '", "index"=>"' + words[0] +\
+                             'A01", "sequence"=>"' + words[1] +\
+                             '", "created_at"=>Carbon::now(), "updated_at"=>Carbon::now()),')
 
-            indexes['i5'].append('array("index_set_id"=>"' + i5_set_id + '", "index"=>"' + words[2] +
+        if len(words) == 4:
+            indexes['i5'].append('array("index_set_id"=>"' + argv[3] + '", "index"=>"' + words[2] +
                                  'A01", "sequence"=>"' + words[3] +
                                  '", "created_at"=>Carbon::now(), "updated_at"=>Carbon::now()),')
 
@@ -39,4 +35,4 @@ if __name__ == '__main__':
     if len(sys.argv) < 3:
         usage()
 
-    do_work(sys.argv[1], sys.argv[2], sys.argv[3])
+    do_work(sys.argv)
