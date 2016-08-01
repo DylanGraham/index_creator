@@ -12,7 +12,7 @@ def do_work(argv):
     for line in open(argv[1]):
         words = line.split()
 
-        indexes['i7'].append('array("index_set_id"=>"' + argv[2] + '", "index"=>"' + words[0] +\
+        indexes['i7'].append('array("index_set_id"=>"' + argv[2] + '", "index"=>"' + words[0] +
                              'A01", "sequence"=>"' + words[1] +\
                              '", "created_at"=>Carbon::now(), "updated_at"=>Carbon::now()),')
 
