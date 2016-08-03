@@ -21,14 +21,11 @@ def do_work(argv):
                                  '"sequence"=>"' + words[3] +
                                  '", "created_at"=>Carbon::now(), "updated_at"=>Carbon::now()),')
 
-    print('i7 indexes\n')
-    for i in indexes['i7']:
-        print(i)
-
-    if indexes['i5']:
-        print('\ni5 indexes\n')
-        for i in indexes['i5']:
-            print(i)
+    for key in indexes.keys():
+        if indexes[key]:
+            print(key + " indexes\n")
+            for i in indexes[key]:
+                print(i)
 
 
 if __name__ == '__main__':
