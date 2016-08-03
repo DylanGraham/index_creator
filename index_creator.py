@@ -2,7 +2,7 @@ import sys
 
 
 def usage():
-    print('Usage: index_creator.py <filename> <i7_index_set_id> [i5_index_set_id]')
+    print('Usage: index_creator.py <filename> <index_set_id>')
     sys.exit(1)
 
 
